@@ -1,0 +1,778 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AD Visual Marketing | Video Editor & Motion Designer</title>
+    <meta name="description" content="AD Visual Marketing — Professional Video Editing, Motion Design & Visual Storytelling. Helping brands increase engagement with scroll-stopping content.">
+    <meta name="robots" content="index, follow">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%230B0B0B'/><text x='4' y='24' font-family='Arial Black' font-size='20' fill='%23FF6A00' font-weight='900'>AD</text></svg>">
+    <!-- Open Graph -->
+    <meta property="og:title" content="AD Visual Marketing | Motion Design & Video Editing">
+    <meta property="og:description" content="Helping brands increase engagement with scroll-stopping motion design and video content.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://akheehhe.github.io/ad-visual-marketing/">
+    <meta property="og:image" content="https://akheehhe.github.io/ad-visual-marketing/assets/images/og-image.jpg">
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Inter+Tight:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://api.fontshare.com/v2/css?f[]=satoshi@300,400,500,600,700,800,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "ProfessionalService",
+        "name": "AD Visual Marketing",
+        "description": "Professional Video Editing, Motion Design & Visual Storytelling",
+        "email": "anriduduchaga@gmail.com",
+        "url": "https://akheehhe.github.io/ad-visual-marketing/",
+        "sameAs": [
+            "https://www.tiktok.com/@a.duduchava",
+            "https://www.instagram.com/ad.visualmarketing/",
+            "https://www.facebook.com/profile.php?id=61585503572848"
+        ]
+    }
+    </script>
+</head>
+<body>
+    <!-- 3D Canvas Background -->
+    <canvas id="bg-canvas"></canvas>
+
+    <!-- Custom Cursor -->
+    <div class="cursor" id="cursor"></div>
+    <div class="cursor-follower" id="cursor-follower"></div>
+
+    <!-- Sticky CTA Bar -->
+    <div class="sticky-cta" id="sticky-cta">
+        <span>Ready to elevate your brand?</span>
+        <a href="#contact" class="btn btn-primary btn-sm">Start a Project</a>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="nav" id="nav">
+        <a href="#" class="nav-logo">
+            <span class="logo-text">AD</span>
+            <span class="logo-dot"></span>
+        </a>
+        <div class="nav-links">
+            <a href="#work" class="nav-link" data-section="work">Work</a>
+            <a href="#about" class="nav-link" data-section="about">About</a>
+            <a href="#process" class="nav-link" data-section="process">Process</a>
+            <a href="#services" class="nav-link" data-section="services">Services</a>
+            <a href="#testimonials" class="nav-link" data-section="testimonials">Reviews</a>
+            <a href="#faq" class="nav-link" data-section="faq">FAQ</a>
+            <a href="#contact" class="nav-link nav-link-cta">Start a Project</a>
+        </div>
+        <button class="nav-menu-btn" id="menu-btn" aria-label="Menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobile-menu">
+        <div class="mobile-menu-links">
+            <a href="#work" class="mobile-link">Work</a>
+            <a href="#about" class="mobile-link">About</a>
+            <a href="#process" class="mobile-link">Process</a>
+            <a href="#services" class="mobile-link">Services</a>
+            <a href="#testimonials" class="mobile-link">Reviews</a>
+            <a href="#faq" class="mobile-link">FAQ</a>
+            <a href="#contact" class="mobile-link mobile-link-cta">Start a Project</a>
+        </div>
+        <div class="mobile-menu-socials">
+            <a href="https://www.tiktok.com/@a.duduchava" target="_blank" rel="noopener">TikTok</a>
+            <a href="https://www.instagram.com/ad.visualmarketing/" target="_blank" rel="noopener">Instagram</a>
+            <a href="https://www.facebook.com/profile.php?id=61585503572848" target="_blank" rel="noopener">Facebook</a>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero" id="hero">
+        <div class="hero-video-bg">
+            <video autoplay muted loop playsinline preload="auto" id="hero-video">
+                <source src="assets/videos/about me video georgian.mp4" type="video/mp4">
+            </video>
+            <div class="hero-video-overlay"></div>
+        </div>
+        <div class="hero-content">
+            <div class="hero-label">
+                <span class="hero-label-line"></span>
+                <span>Video Editor & Motion Designer</span>
+            </div>
+            <h1 class="hero-title">
+                <div class="title-line"><span>Motion That</span></div>
+                <div class="title-line"><span>Makes Brands</span> <span class="title-outline">Move</span></div>
+            </h1>
+            <p class="hero-subtitle">Helping brands increase engagement with scroll-stopping video content, motion design, and visual storytelling.</p>
+            <div class="hero-cta">
+                <a href="#contact" class="btn btn-primary">
+                    <span>Start a Project</span>
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M7 17L17 7M17 7H7M17 7V17" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </a>
+                <a href="#work" class="btn btn-ghost">View My Work</a>
+            </div>
+            <div class="hero-availability">
+                <span class="availability-dot"></span>
+                <span>Currently accepting new clients</span>
+            </div>
+        </div>
+        <div class="hero-scroll">
+            <div class="scroll-line"></div>
+            <span>Scroll</span>
+        </div>
+    </section>
+
+    <!-- Trusted By -->
+    <div class="trusted-section">
+        <span class="trusted-label">Trusted by</span>
+        <div class="trusted-logos">
+            <img src="assets/images/archi.png" alt="Archi" loading="lazy">
+            <img src="assets/images/Glovo.png" alt="Glovo" loading="lazy">
+            <img src="assets/images/snacky-logo.png" alt="Snacky" loading="lazy">
+            <img src="assets/images/Jassneakers.png" alt="Jas Sneakers" loading="lazy">
+            <img src="assets/images/Caru.png" alt="Caru" loading="lazy">
+            <img src="assets/images/Element meals.png" alt="Element Meals" loading="lazy">
+            <img src="assets/images/Kursi ge.png" alt="Kursi.ge" loading="lazy">
+        </div>
+    </div>
+
+    <!-- Marquee -->
+    <div class="marquee-section">
+        <div class="marquee">
+            <div class="marquee-track">
+                <span>Motion Design</span><span class="marquee-star">&#10038;</span>
+                <span>Video Editing</span><span class="marquee-star">&#10038;</span>
+                <span>Visual Effects</span><span class="marquee-star">&#10038;</span>
+                <span>Color Grading</span><span class="marquee-star">&#10038;</span>
+                <span>3D Animation</span><span class="marquee-star">&#10038;</span>
+                <span>Storytelling</span><span class="marquee-star">&#10038;</span>
+                <span>Motion Design</span><span class="marquee-star">&#10038;</span>
+                <span>Video Editing</span><span class="marquee-star">&#10038;</span>
+                <span>Visual Effects</span><span class="marquee-star">&#10038;</span>
+                <span>Color Grading</span><span class="marquee-star">&#10038;</span>
+                <span>3D Animation</span><span class="marquee-star">&#10038;</span>
+                <span>Storytelling</span><span class="marquee-star">&#10038;</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Work / Projects Section -->
+    <section class="section work-section" id="work">
+        <div class="section-header">
+            <span class="section-label">Selected Projects</span>
+            <h2 class="section-title">Featured <span class="title-outline">Work</span></h2>
+        </div>
+
+        <!-- Filter Buttons -->
+        <div class="filter-bar">
+            <button class="filter-btn active" data-filter="all">All</button>
+            <button class="filter-btn" data-filter="motion">Motion Design</button>
+            <button class="filter-btn" data-filter="editing">Video Editing</button>
+        </div>
+
+        <div class="projects-grid" id="projects-grid">
+            <!-- Motion Design Projects -->
+            <div class="project-card" data-category="motion">
+                <div class="project-thumb" data-video="assets/videos/Macdonalds.mp4">
+                    <video class="project-video" src="assets/videos/Macdonalds.mp4" muted loop playsinline preload="metadata"></video>
+                    <div class="project-play-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="white"><polygon points="5,3 19,12 5,21"/></svg></div>
+                </div>
+                <div class="project-info">
+                    <div class="project-details">
+                        <h3>McDonald's</h3>
+                        <p class="project-client">Brand Motion Ad</p>
+                    </div>
+                    <span class="project-tag">Motion Design</span>
+                </div>
+            </div>
+
+            <div class="project-card" data-category="motion">
+                <div class="project-thumb" data-video="assets/videos/Archi.mp4">
+                    <video class="project-video" src="assets/videos/Archi.mp4" muted loop playsinline preload="metadata"></video>
+                    <div class="project-play-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="white"><polygon points="5,3 19,12 5,21"/></svg></div>
+                </div>
+                <div class="project-info">
+                    <div class="project-details">
+                        <h3>Archi</h3>
+                        <p class="project-client">Real Estate Motion Ad</p>
+                    </div>
+                    <span class="project-tag">Motion Design</span>
+                </div>
+            </div>
+
+            <div class="project-card" data-category="motion">
+                <div class="project-thumb" data-video="assets/videos/Cerea.ai vid 1.mp4">
+                    <video class="project-video" src="assets/videos/Cerea.ai vid 1.mp4" muted loop playsinline preload="metadata"></video>
+                    <div class="project-play-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="white"><polygon points="5,3 19,12 5,21"/></svg></div>
+                </div>
+                <div class="project-info">
+                    <div class="project-details">
+                        <h3>Cerea.ai</h3>
+                        <p class="project-client">AI SaaS Product Video</p>
+                    </div>
+                    <span class="project-tag">Motion Design</span>
+                </div>
+            </div>
+
+            <div class="project-card" data-category="motion">
+                <div class="project-thumb" data-video="assets/videos/Snacky.mp4">
+                    <video class="project-video" src="assets/videos/Snacky.mp4" muted loop playsinline preload="metadata"></video>
+                    <div class="project-play-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="white"><polygon points="5,3 19,12 5,21"/></svg></div>
+                </div>
+                <div class="project-info">
+                    <div class="project-details">
+                        <h3>Snacky</h3>
+                        <p class="project-client">Food Brand Motion Ad</p>
+                    </div>
+                    <span class="project-tag">Motion Design</span>
+                </div>
+            </div>
+
+            <div class="project-card" data-category="motion">
+                <div class="project-thumb" data-video="assets/videos/Financial space.mp4">
+                    <video class="project-video" src="assets/videos/Financial space.mp4" muted loop playsinline preload="metadata"></video>
+                    <div class="project-play-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="white"><polygon points="5,3 19,12 5,21"/></svg></div>
+                </div>
+                <div class="project-info">
+                    <div class="project-details">
+                        <h3>Financial Space</h3>
+                        <p class="project-client">Finance Motion Graphics</p>
+                    </div>
+                    <span class="project-tag">Motion Design</span>
+                </div>
+            </div>
+
+            <div class="project-card" data-category="motion">
+                <div class="project-thumb" data-video="assets/videos/Pain2plan.mp4">
+                    <video class="project-video" src="assets/videos/Pain2plan.mp4" muted loop playsinline preload="metadata"></video>
+                    <div class="project-play-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="white"><polygon points="5,3 19,12 5,21"/></svg></div>
+                </div>
+                <div class="project-info">
+                    <div class="project-details">
+                        <h3>Pain2Plan</h3>
+                        <p class="project-client">App Promo Motion</p>
+                    </div>
+                    <span class="project-tag">Motion Design</span>
+                </div>
+            </div>
+
+            <div class="project-card" data-category="motion">
+                <div class="project-thumb" data-video="assets/videos/Jassneakers.mp4">
+                    <video class="project-video" src="assets/videos/Jassneakers.mp4" muted loop playsinline preload="metadata"></video>
+                    <div class="project-play-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="white"><polygon points="5,3 19,12 5,21"/></svg></div>
+                </div>
+                <div class="project-info">
+                    <div class="project-details">
+                        <h3>Jas Sneakers</h3>
+                        <p class="project-client">E-commerce Product Video</p>
+                    </div>
+                    <span class="project-tag">Motion Design</span>
+                </div>
+            </div>
+
+            <div class="project-card" data-category="motion">
+                <div class="project-thumb" data-video="assets/videos/POvo.mp4">
+                    <video class="project-video" src="assets/videos/POvo.mp4" muted loop playsinline preload="metadata"></video>
+                    <div class="project-play-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="white"><polygon points="5,3 19,12 5,21"/></svg></div>
+                </div>
+                <div class="project-info">
+                    <div class="project-details">
+                        <h3>POvo</h3>
+                        <p class="project-client">Brand Motion Content</p>
+                    </div>
+                    <span class="project-tag">Motion Design</span>
+                </div>
+            </div>
+
+            <div class="project-card" data-category="motion">
+                <div class="project-thumb" data-video="assets/videos/Sazrisi.mp4">
+                    <video class="project-video" src="assets/videos/Sazrisi.mp4" muted loop playsinline preload="metadata"></video>
+                    <div class="project-play-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="white"><polygon points="5,3 19,12 5,21"/></svg></div>
+                </div>
+                <div class="project-info">
+                    <div class="project-details">
+                        <h3>Sazrisi</h3>
+                        <p class="project-client">Brand Motion Ad</p>
+                    </div>
+                    <span class="project-tag">Motion Design</span>
+                </div>
+            </div>
+
+            <!-- Video Editing Projects (TikTok embeds) -->
+            <div class="project-card" data-category="editing">
+                <div class="project-thumb project-thumb-embed" data-tiktok="https://www.tiktok.com/@a.duduchava/video/7554725683252120839">
+                    <div class="embed-placeholder">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="white"><polygon points="5,3 19,12 5,21"/></svg>
+                        <span>Watch on TikTok</span>
+                    </div>
+                </div>
+                <div class="project-info">
+                    <div class="project-details">
+                        <h3>Caru</h3>
+                        <p class="project-client">Social Media Video Edit</p>
+                    </div>
+                    <span class="project-tag">Video Editing</span>
+                </div>
+            </div>
+
+            <div class="project-card" data-category="editing">
+                <div class="project-thumb project-thumb-embed" data-tiktok="https://www.tiktok.com/@a.duduchava/video/7532507367062113554">
+                    <div class="embed-placeholder">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="white"><polygon points="5,3 19,12 5,21"/></svg>
+                        <span>Watch on TikTok</span>
+                    </div>
+                </div>
+                <div class="project-info">
+                    <div class="project-details">
+                        <h3>Macintoshi</h3>
+                        <p class="project-client">Brand Video Edit</p>
+                    </div>
+                    <span class="project-tag">Video Editing</span>
+                </div>
+            </div>
+
+            <div class="project-card" data-category="editing">
+                <div class="project-thumb project-thumb-embed" data-tiktok="https://www.tiktok.com/@luciano.agency/video/7575146902514076949">
+                    <div class="embed-placeholder">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="white"><polygon points="5,3 19,12 5,21"/></svg>
+                        <span>Watch on TikTok</span>
+                    </div>
+                </div>
+                <div class="project-info">
+                    <div class="project-details">
+                        <h3>Luciano Agency</h3>
+                        <p class="project-client">Agency Content Edit</p>
+                    </div>
+                    <span class="project-tag">Video Editing</span>
+                </div>
+            </div>
+
+            <div class="project-card" data-category="editing">
+                <div class="project-thumb project-thumb-embed" data-youtube="https://www.youtube.com/watch?v=rrPo4POMMv0">
+                    <div class="embed-placeholder">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="white"><polygon points="5,3 19,12 5,21"/></svg>
+                        <span>Watch on YouTube</span>
+                    </div>
+                </div>
+                <div class="project-info">
+                    <div class="project-details">
+                        <h3>Uncle Achi</h3>
+                        <p class="project-client">YouTube Video Edit</p>
+                    </div>
+                    <span class="project-tag">Video Editing</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="section about-section" id="about">
+        <div class="about-grid">
+            <div class="about-left">
+                <span class="section-label">About Me</span>
+                <h2 class="section-title">I make brands <span class="title-outline">impossible</span> to scroll past</h2>
+                <div class="about-tools">
+                    <span class="tool-label">Tools I Use</span>
+                    <div class="tools-grid">
+                        <div class="tool-item">After Effects</div>
+                        <div class="tool-item">Premiere Pro</div>
+                        <div class="tool-item">DaVinci Resolve</div>
+                        <div class="tool-item">Cinema 4D</div>
+                        <div class="tool-item">Photoshop</div>
+                        <div class="tool-item">Illustrator</div>
+                    </div>
+                </div>
+            </div>
+            <div class="about-right">
+                <p class="about-text">
+                    I'm a Video Editor and Motion Designer who obsesses over every frame. My work isn't just about making things look good — it's about making content that stops thumbs, holds attention, and drives action.
+                </p>
+                <p class="about-text">
+                    From dynamic social media ads to full-scale brand campaigns, I've helped brands like Glovo, Archi, and McDonald's create content that cuts through the noise. Every project is crafted with one goal: results.
+                </p>
+                <div class="about-stats">
+                    <div class="stat">
+                        <span class="stat-number" data-count="50">0</span><span class="stat-plus">+</span>
+                        <span class="stat-label">Projects Delivered</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number" data-count="30">0</span><span class="stat-plus">+</span>
+                        <span class="stat-label">Happy Clients</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number" data-count="3">0</span><span class="stat-plus">+</span>
+                        <span class="stat-label">Years Experience</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Process Section -->
+    <section class="section process-section" id="process">
+        <div class="section-header">
+            <span class="section-label">How I Work</span>
+            <h2 class="section-title">From idea to <span class="title-outline">delivery</span></h2>
+        </div>
+        <div class="process-grid">
+            <div class="process-step">
+                <span class="process-number">01</span>
+                <h3>Discovery Call</h3>
+                <p>We discuss your brand, goals, and vision. I learn what makes your audience tick.</p>
+            </div>
+            <div class="process-arrow">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+            <div class="process-step">
+                <span class="process-number">02</span>
+                <h3>Concept & Brief</h3>
+                <p>I create a detailed creative brief with storyboards, references, and a clear direction.</p>
+            </div>
+            <div class="process-arrow">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+            <div class="process-step">
+                <span class="process-number">03</span>
+                <h3>Production</h3>
+                <p>The magic happens. I craft every frame with precision, rhythm, and your brand's identity.</p>
+            </div>
+            <div class="process-arrow">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+            <div class="process-step">
+                <span class="process-number">04</span>
+                <h3>Revisions & Delivery</h3>
+                <p>2 rounds of revisions included. Final files delivered in all formats you need.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="section services-section" id="services">
+        <div class="section-header">
+            <span class="section-label">What I Do</span>
+            <h2 class="section-title">My <span class="title-outline">Services</span></h2>
+        </div>
+        <div class="services-list">
+            <div class="service-item">
+                <span class="service-number">01</span>
+                <div class="service-content">
+                    <h3>Motion Design</h3>
+                    <p>Eye-catching motion graphics and animations that bring brands to life. Logos, intros, social ads, explainers.</p>
+                    <div class="service-includes">
+                        <span>What you get:</span>
+                        <ul>
+                            <li>Custom motion graphics</li>
+                            <li>2 revision rounds</li>
+                            <li>Source files included</li>
+                            <li>Platform-optimized exports</li>
+                        </ul>
+                    </div>
+                </div>
+                <a href="#contact" class="btn btn-ghost btn-sm service-cta">Book This</a>
+            </div>
+            <div class="service-item">
+                <span class="service-number">02</span>
+                <div class="service-content">
+                    <h3>Video Editing</h3>
+                    <p>Professional editing with seamless pacing, transitions, and storytelling. YouTube, TikTok, Instagram, ads.</p>
+                    <div class="service-includes">
+                        <span>What you get:</span>
+                        <ul>
+                            <li>Full video edit with sound design</li>
+                            <li>Color correction</li>
+                            <li>2 revision rounds</li>
+                            <li>Multi-format delivery</li>
+                        </ul>
+                    </div>
+                </div>
+                <a href="#contact" class="btn btn-ghost btn-sm service-cta">Book This</a>
+            </div>
+            <div class="service-item">
+                <span class="service-number">03</span>
+                <div class="service-content">
+                    <h3>Color Grading</h3>
+                    <p>Cinematic color grading that sets the mood, enhances narrative, and gives footage a distinctive identity.</p>
+                    <div class="service-includes">
+                        <span>What you get:</span>
+                        <ul>
+                            <li>Professional color grade</li>
+                            <li>Custom LUT creation</li>
+                            <li>Consistent look across project</li>
+                            <li>DaVinci Resolve workflow</li>
+                        </ul>
+                    </div>
+                </div>
+                <a href="#contact" class="btn btn-ghost btn-sm service-cta">Book This</a>
+            </div>
+            <div class="service-item">
+                <span class="service-number">04</span>
+                <div class="service-content">
+                    <h3>Social Media Content</h3>
+                    <p>Scroll-stopping reels, TikToks, and social-first videos optimized for maximum engagement.</p>
+                    <div class="service-includes">
+                        <span>What you get:</span>
+                        <ul>
+                            <li>Platform-native content</li>
+                            <li>Trending formats & hooks</li>
+                            <li>Captions & text overlays</li>
+                            <li>Vertical + horizontal versions</li>
+                        </ul>
+                    </div>
+                </div>
+                <a href="#contact" class="btn btn-ghost btn-sm service-cta">Book This</a>
+            </div>
+            <div class="service-item">
+                <span class="service-number">05</span>
+                <div class="service-content">
+                    <h3>Visual Effects</h3>
+                    <p>Compositing, tracking, and VFX — from subtle enhancements to bold visual statements.</p>
+                    <div class="service-includes">
+                        <span>What you get:</span>
+                        <ul>
+                            <li>VFX compositing</li>
+                            <li>Motion tracking</li>
+                            <li>Green screen keying</li>
+                            <li>3D integration</li>
+                        </ul>
+                    </div>
+                </div>
+                <a href="#contact" class="btn btn-ghost btn-sm service-cta">Book This</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="section testimonials-section" id="testimonials">
+        <div class="section-header">
+            <span class="section-label">Client Reviews</span>
+            <h2 class="section-title">What clients <span class="title-outline">say</span></h2>
+        </div>
+        <div class="testimonials-grid">
+            <div class="testimonial-card">
+                <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                <p>"Delivered exactly what we needed — fast, professional, and the quality exceeded our expectations. Our social engagement jumped significantly after using his content."</p>
+                <div class="testimonial-author">
+                    <div class="testimonial-info">
+                        <strong>Archi</strong>
+                        <span>Real Estate Brand</span>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial-card">
+                <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                <p>"Incredible attention to detail. The motion graphics he created for our brand were exactly what we envisioned. Highly recommend for any brand looking to stand out."</p>
+                <div class="testimonial-author">
+                    <div class="testimonial-info">
+                        <strong>Snacky</strong>
+                        <span>Food & Beverage Brand</span>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial-card">
+                <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                <p>"Working with AD Visual was seamless. He understood our brief immediately and delivered scroll-stopping content that performed incredibly well on our channels."</p>
+                <div class="testimonial-author">
+                    <div class="testimonial-info">
+                        <strong>Luciano Agency</strong>
+                        <span>Marketing Agency</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="section faq-section" id="faq">
+        <div class="section-header">
+            <span class="section-label">Common Questions</span>
+            <h2 class="section-title">Frequently <span class="title-outline">Asked</span></h2>
+        </div>
+        <div class="faq-list">
+            <div class="faq-item">
+                <button class="faq-question">
+                    <span>How long does a typical project take?</span>
+                    <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 5V19M5 12H19" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+                </button>
+                <div class="faq-answer">
+                    <p>Most projects are delivered within 3-7 business days depending on complexity. Simple edits can be done in 1-2 days, while complex motion design projects may take 1-2 weeks. I'll give you an exact timeline during our discovery call.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question">
+                    <span>What's your revision policy?</span>
+                    <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 5V19M5 12H19" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+                </button>
+                <div class="faq-answer">
+                    <p>Every project includes 2 rounds of revisions. Additional revision rounds can be arranged. I always make sure you're 100% happy with the final result before delivery.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question">
+                    <span>What formats do you deliver?</span>
+                    <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 5V19M5 12H19" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+                </button>
+                <div class="faq-answer">
+                    <p>I deliver in any format you need — MP4, MOV, ProRes, GIF, and platform-optimized versions for TikTok, Instagram, YouTube, Facebook, and more. Source files (After Effects, Premiere Pro) are included in most packages.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question">
+                    <span>Do you offer ongoing/retainer packages?</span>
+                    <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 5V19M5 12H19" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+                </button>
+                <div class="faq-answer">
+                    <p>Yes! For brands that need consistent content, I offer monthly retainer packages with priority turnaround and discounted rates. Let's discuss what makes sense for your needs during our call.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question">
+                    <span>What do you need from me to get started?</span>
+                    <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 5V19M5 12H19" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+                </button>
+                <div class="faq-answer">
+                    <p>Just your vision! I'll need your raw footage (if applicable), brand guidelines, references or mood boards, and a brief description of what you want to achieve. If you don't have all of that, no worries — I'll guide you through it on our call.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question">
+                    <span>Can you work with international clients?</span>
+                    <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 5V19M5 12H19" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+                </button>
+                <div class="faq-answer">
+                    <p>Absolutely! I work with clients worldwide. Communication is done via email, WhatsApp, or Google Meet. Files are shared through Google Drive or WeTransfer. Time zones are never a problem.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="section contact-section" id="contact">
+        <div class="contact-grid">
+            <div class="contact-left">
+                <span class="section-label">Start a Project</span>
+                <h2 class="section-title">Let's create something <span class="title-outline">amazing</span></h2>
+                <p class="contact-text">Have a project in mind? Fill out the form and I'll get back to you within 24 hours.</p>
+                <div class="contact-response">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="1.5"/><path d="M12 6V12L16 14" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+                    <span>Average response time: under 2 hours</span>
+                </div>
+                <div class="contact-details">
+                    <a href="mailto:anriduduchaga@gmail.com" class="contact-link">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><rect x="2" y="4" width="20" height="16" rx="2" stroke="currentColor" stroke-width="1.5"/><path d="M2 4L12 13L22 4" stroke="currentColor" stroke-width="1.5"/></svg>
+                        anriduduchaga@gmail.com
+                    </a>
+                </div>
+                <div class="contact-socials">
+                    <a href="https://www.tiktok.com/@a.duduchava" target="_blank" rel="noopener" class="social-link" aria-label="TikTok">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1v-3.5a6.37 6.37 0 00-.79-.05A6.34 6.34 0 003.15 15.2a6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.34-6.34V8.66a8.21 8.21 0 004.76 1.51V6.72a4.83 4.83 0 01-1-.03z"/></svg>
+                    </a>
+                    <a href="https://www.instagram.com/ad.visualmarketing/" target="_blank" rel="noopener" class="social-link" aria-label="Instagram">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1.5" fill="currentColor" stroke="none"/></svg>
+                    </a>
+                    <a href="https://www.facebook.com/profile.php?id=61585503572848" target="_blank" rel="noopener" class="social-link" aria-label="Facebook">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+                    </a>
+                </div>
+            </div>
+            <div class="contact-right">
+                <form class="contact-form" id="contact-form" action="https://formsubmit.co/anriduduchaga@gmail.com" method="POST">
+                    <input type="hidden" name="_subject" value="New Project Brief — AD Visual Marketing">
+                    <input type="hidden" name="_captcha" value="false">
+                    <input type="hidden" name="_template" value="table">
+                    <input type="text" name="_honey" style="display:none">
+                    <div class="form-group">
+                        <input type="text" id="name" name="name" required placeholder=" ">
+                        <label for="name">Your Name</label>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" id="email" name="email" required placeholder=" ">
+                        <label for="email">Your Email</label>
+                    </div>
+                    <div class="form-group">
+                        <select id="service" name="service" required>
+                            <option value="" disabled selected>What do you need?</option>
+                            <option value="motion-design">Motion Design</option>
+                            <option value="video-editing">Video Editing</option>
+                            <option value="color-grading">Color Grading</option>
+                            <option value="social-media">Social Media Content</option>
+                            <option value="vfx">Visual Effects</option>
+                            <option value="full-package">Full Package (Multiple Services)</option>
+                            <option value="not-sure">Not Sure Yet — Let's Discuss</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <select id="budget" name="budget">
+                            <option value="" disabled selected>What's your budget range?</option>
+                            <option value="under-200">Under $200</option>
+                            <option value="200-500">$200 – $500</option>
+                            <option value="500-1000">$500 – $1,000</option>
+                            <option value="1000-3000">$1,000 – $3,000</option>
+                            <option value="3000-plus">$3,000+</option>
+                            <option value="discuss">Let's Discuss</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <select id="timeline" name="timeline">
+                            <option value="" disabled selected>When do you need it?</option>
+                            <option value="asap">ASAP (Rush)</option>
+                            <option value="1-week">Within 1 Week</option>
+                            <option value="2-weeks">Within 2 Weeks</option>
+                            <option value="1-month">Within a Month</option>
+                            <option value="flexible">Flexible / No Rush</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <textarea id="message" name="message" rows="3" required placeholder=" "></textarea>
+                        <label for="message">Tell me about your project</label>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-full">
+                        <span>Send Project Brief</span>
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M22 2L11 13M22 2L15 22L11 13M22 2L2 9L11 13" stroke="currentColor" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/></svg>
+                    </button>
+                    <p class="form-note">No commitment required. Free consultation included.</p>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-left">
+                <span class="footer-logo">AD<span class="logo-dot"></span></span>
+                <p>&copy; 2026 AD Visual Marketing. All rights reserved.</p>
+            </div>
+            <div class="footer-right">
+                <a href="https://www.tiktok.com/@a.duduchava" target="_blank" rel="noopener">TikTok</a>
+                <a href="https://www.instagram.com/ad.visualmarketing/" target="_blank" rel="noopener">Instagram</a>
+                <a href="https://www.facebook.com/profile.php?id=61585503572848" target="_blank" rel="noopener">Facebook</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Video Lightbox Modal -->
+    <div class="lightbox" id="lightbox">
+        <button class="lightbox-close" id="lightbox-close" aria-label="Close">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M18 6L6 18M6 6L18 18" stroke="white" stroke-width="2.5" stroke-linecap="round"/></svg>
+        </button>
+        <div class="lightbox-content" id="lightbox-content"></div>
+    </div>
+
+    <!-- Back to Top -->
+    <button class="back-to-top" id="back-to-top" aria-label="Back to top">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 19V5M5 12L12 5L19 12" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </button>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script src="js/three-bg.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
