@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="ka">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CapCut ვორქშოპი · გაცნობა | AD Visual Marketing</title>
+    <meta name="description" content="CapCut ვორქშოპი ანრი დუდუჩავასთან — 30-წამიანი გაცნობის ფორმა.">
+    <meta name="robots" content="noindex">
+    <meta name="theme-color" content="#0B0B0B">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%230B0B0B'/><text x='4' y='24' font-family='Arial Black' font-size='20' fill='%23FF6A00' font-weight='900'>AD</text></svg>">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Noto+Sans+Georgian:wght@400..900&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+        :root {
+            --bg: #0B0B0B; --surface: #161513; --line: rgba(255,255,255,0.10);
+            --text: #F5F2EC; --dim: #A9A39B; --accent: #FF6A00; --ok: #22C55E;
+            --font: 'Noto Sans Georgian', Arial, sans-serif; --display: 'Archivo Black', 'Noto Sans Georgian', Arial, sans-serif;
+        }
+        html { -webkit-text-size-adjust: 100%; }
+        body { font-family: var(--font); background: radial-gradient(circle at 80% -10%, #3A1A05 0%, var(--bg) 55%) fixed; background-color: var(--bg); color: var(--text); min-height: 100vh; line-height: 1.45; }
+        .wrap { max-width: 520px; margin: 0 auto; padding: 20px 16px 48px; }
+        .top { display: flex; align-items: center; justify-content: space-between; margin-bottom: 36px; }
+        .logo { font-family: var(--display); font-size: 22px; letter-spacing: 0.04em; display: flex; align-items: center; gap: 4px; color: var(--text); text-decoration: none; }
+        .logo i { width: 8px; height: 8px; border-radius: 50%; background: var(--accent); display: inline-block; }
+        .tag { font-size: 13px; color: var(--dim); }
+        .eyebrow { font-size: 13px; font-weight: 700; letter-spacing: 0.2em; color: var(--accent); margin-bottom: 12px; }
+        h1 { font-size: 40px; font-weight: 900; line-height: 1.05; letter-spacing: -0.02em; margin-bottom: 12px; }
+        .lead { color: var(--dim); font-size: 17px; margin-bottom: 28px; }
+        form { display: flex; flex-direction: column; gap: 22px; }
+        .field { display: flex; flex-direction: column; gap: 10px; }
+        .label { font-size: 16px; font-weight: 700; }
+        .label small { font-weight: 400; color: var(--dim); }
+        input[type=text] { width: 100%; font: inherit; font-size: 17px; color: var(--text); background: var(--surface); border: 1px solid var(--line); border-radius: 14px; padding: 14px 16px; outline: none; transition: border-color .2s; }
+        input[type=text]::placeholder { color: #6F6A63; }
+        input[type=text]:focus { border-color: var(--accent); }
+        .choices { display: flex; flex-wrap: wrap; gap: 8px; }
+        .choice { position: relative; }
+        .choice input { position: absolute; opacity: 0; inset: 0; cursor: pointer; }
+        .choice span { display: inline-flex; align-items: center; justify-content: center; min-height: 46px; padding: 10px 16px; border: 1px solid var(--line); border-radius: 999px; background: var(--surface); font-size: 15px; font-weight: 600; color: var(--text); transition: all .15s; user-select: none; }
+        .choice input:checked + span { background: var(--accent); border-color: var(--accent); color: var(--bg); }
+        .choice input:focus-visible + span { outline: 2px solid var(--text); outline-offset: 2px; }
+        .levels { display: grid; grid-template-columns: repeat(5, 1fr); gap: 8px; }
+        .levels .choice span { width: 100%; font-family: var(--display); font-size: 20px; border-radius: 14px; min-height: 54px; }
+        .scale { display: flex; justify-content: space-between; font-size: 13px; color: var(--dim); margin-top: -2px; }
+        .note { font-size: 13px; color: var(--dim); }
+        button { font: inherit; font-size: 17px; font-weight: 800; color: var(--bg); background: var(--accent); border: none; border-radius: 16px; padding: 18px 20px; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 10px; transition: transform .15s, opacity .15s; }
+        button:active { transform: scale(0.98); }
+        button[disabled] { opacity: .6; }
+        .error { color: #FF8A5C; font-size: 14px; min-height: 1em; }
+        .hp { position: absolute; left: -9999px; width: 1px; height: 1px; opacity: 0; }
+        /* result */
+        #done { display: none; }
+        .ok { display: flex; align-items: center; gap: 10px; color: var(--ok); font-weight: 700; font-size: 15px; margin-bottom: 14px; }
+        .idcard { position: relative; overflow: hidden; background: linear-gradient(150deg, #22201D 0%, #121110 100%); border: 1px solid var(--line); border-radius: 24px; padding: 22px; margin: 18px 0 22px; }
+        .idcard::after { content: ""; position: absolute; right: -60px; top: -60px; width: 180px; height: 180px; border-radius: 50%; background: radial-gradient(circle, rgba(255,106,0,.35), rgba(255,106,0,0) 70%); }
+        .idtop { display: flex; justify-content: space-between; align-items: center; font-size: 12px; letter-spacing: .18em; color: var(--dim); font-weight: 700; margin-bottom: 18px; }
+        .idname { font-size: 34px; font-weight: 900; line-height: 1.05; margin-bottom: 4px; word-break: break-word; }
+        .idrole { color: var(--dim); font-size: 16px; margin-bottom: 18px; }
+        .bar { display: grid; grid-template-columns: repeat(5, 1fr); gap: 6px; margin: 6px 0 4px; }
+        .bar i { height: 10px; border-radius: 5px; background: #34312C; }
+        .bar i.on { background: var(--accent); }
+        .row { display: flex; justify-content: space-between; gap: 12px; font-size: 14px; color: var(--dim); margin-top: 12px; }
+        .row b { color: var(--text); font-weight: 700; text-align: right; }
+        .speech { background: var(--text); color: var(--bg); border-radius: 18px; padding: 18px; font-size: 17px; font-weight: 600; line-height: 1.5; }
+        .speech small { display: block; font-size: 12px; letter-spacing: .18em; font-weight: 800; color: #9A4000; margin-bottom: 8px; }
+        .hint { color: var(--dim); font-size: 14px; margin-top: 12px; }
+        .follow { margin-top: 28px; display: flex; gap: 10px; flex-wrap: wrap; }
+        .follow a { flex: 1; min-width: 140px; text-align: center; text-decoration: none; color: var(--text); border: 1px solid var(--line); border-radius: 14px; padding: 14px; font-weight: 700; font-size: 15px; }
+        .foot { margin-top: 36px; font-size: 12px; color: #6F6A63; text-align: center; }
+    </style>
+</head>
+<body>
+<div class="wrap">
+    <div class="top">
+        <a class="logo" href="https://akheehhe.github.io/ad-visual-marketing/">AD<i></i></a>
+        <span class="tag">CapCut ვორქშოპი</span>
+    </div>
+
+    <section id="start">
+        <p class="eyebrow">ᲒᲐᲪᲜᲝᲑᲐ · 30 ᲬᲐᲛᲘ</p>
+        <h1>გამარჯობა!</h1>
+        <p class="lead">რამდენიმე კითხვა — და ვორქშოპს შენზე მოვარგებ. მე ვარ ანრი — დღეს ერთად ვიმუშავებთ CapCut-ში.</p>
+
+        <form id="form" novalidate>
+            <input class="hp" type="text" name="_honey" tabindex="-1" autocomplete="off" aria-hidden="true">
+            <label class="field">
+                <span class="label">სახელი</span>
+                <input type="text" name="name" id="name" autocomplete="given-name" placeholder="როგორ მოგმართო?" maxlength="40" required>
+            </label>
+            <label class="field">
+                <span class="label">რას საქმიანობ?</span>
+                <input type="text" name="role" id="role" placeholder="მაგ. სტუდენტი · SMM მენეჯერი · მეწარმე" maxlength="60">
+            </label>
+            <div class="field" role="radiogroup" aria-label="CapCut-ის დონე">
+                <span class="label">CapCut-ში ჩემი დონე</span>
+                <div class="levels">
+                    <label class="choice"><input type="radio" name="level" value="1"><span>1</span></label>
+                    <label class="choice"><input type="radio" name="level" value="2"><span>2</span></label>
+                    <label class="choice"><input type="radio" name="level" value="3"><span>3</span></label>
+                    <label class="choice"><input type="radio" name="level" value="4"><span>4</span></label>
+                    <label class="choice"><input type="radio" name="level" value="5"><span>5</span></label>
+                </div>
+                <div class="scale"><span>პირველად ვხსნი</span><span>ყოველდღე ვამონტაჟებ</span></div>
+            </div>
+            <div class="field" role="radiogroup" aria-label="სად ამონტაჟებ">
+                <span class="label">სად ამონტაჟებ?</span>
+                <div class="choices">
+                    <label class="choice"><input type="radio" name="device" value="ტელეფონი"><span>ტელეფონი</span></label>
+                    <label class="choice"><input type="radio" name="device" value="კომპიუტერი"><span>კომპიუტერი</span></label>
+                    <label class="choice"><input type="radio" name="device" value="ორივე"><span>ორივე</span></label>
+                </div>
+            </div>
+            <div class="field">
+                <span class="label">რა ვიდეოები გინდა გააკეთო? <small>(რამდენიმეც შეიძლება)</small></span>
+                <div class="choices">
+                    <label class="choice"><input type="checkbox" name="goals" value="Reels / TikTok"><span>Reels / TikTok</span></label>
+                    <label class="choice"><input type="checkbox" name="goals" value="YouTube"><span>YouTube</span></label>
+                    <label class="choice"><input type="checkbox" name="goals" value="ბრენდის რეკლამა"><span>ბრენდის რეკლამა</span></label>
+                    <label class="choice"><input type="checkbox" name="goals" value="პირადი / ვლოგი"><span>პირადი / ვლოგი</span></label>
+                    <label class="choice"><input type="checkbox" name="goals" value="სხვა"><span>სხვა</span></label>
+                </div>
+            </div>
+            <label class="field">
+                <span class="label">დღეს მინდა ვისწავლო… <small>(სურვილისამებრ)</small></span>
+                <input type="text" name="learn" id="learn" placeholder="მაგ. ტექსტის ანიმაცია · ფერი · ექსპორტი" maxlength="90">
+            </label>
+            <p class="note">პასუხებს მხოლოდ ანრი ნახავს — ვორქშოპის მოსარგებად.</p>
+            <p class="error" id="error" role="alert"></p>
+            <button type="submit" id="submit">შემოგვიერთდი <span aria-hidden="true">→</span></button>
+        </form>
+    </section>
+
+    <section id="done" aria-live="polite">
+        <p class="ok"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="11" stroke="currentColor" stroke-width="2"/><path d="M7 12.5l3.2 3.2L17 9" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg><span id="okText">შენ ვორქშოპზე ხარ!</span></p>
+        <h1 id="hello">გამარჯობა!</h1>
+        <div class="idcard">
+            <div class="idtop"><span>CAPCUT ᲕᲝᲠᲥᲨᲝᲞᲘ</span><span>ᲛᲝᲜᲐᲬᲘᲚᲔ</span></div>
+            <p class="idname" id="cName"></p>
+            <p class="idrole" id="cRole"></p>
+            <div class="row" style="margin-top:0"><span>CapCut-ის დონე</span><b id="cLevelTxt"></b></div>
+            <div class="bar" id="cBar"><i></i><i></i><i></i><i></i><i></i></div>
+            <div class="row"><span>ვამონტაჟებ</span><b id="cDevice"></b></div>
+            <div class="row"><span>მინდა გავაკეთო</span><b id="cGoals"></b></div>
+        </div>
+        <div class="speech"><small>ᲨᲔᲜᲘ 20 ᲬᲐᲛᲘ</small><span id="cSpeech"></span></div>
+        <p class="hint">როცა შენი ჯერი მოვა — ეს ხმამაღლა წაიკითხე. ბონუსს ვორქშოპის ბოლოს გაჩვენებ.</p>
+        <div class="follow">
+            <a href="https://www.instagram.com/ad.visualmarketing/" target="_blank" rel="noopener">Instagram</a>
+            <a href="https://www.tiktok.com/@a.duduchava" target="_blank" rel="noopener">TikTok</a>
+        </div>
+    </section>
+
+    <p class="foot">© AD Visual Marketing · ანრი დუდუჩავა</p>
+</div>
+
+<script>
+(function () {
+    // Check-ins are emailed to Anri through FormSubmit (same service as the portfolio contact form).
+    var ENDPOINT = 'https://formsubmit.co/ajax/anriduduchaga@gmail.com';
+    var form = document.getElementById('form');
+    var errorEl = document.getElementById('error');
+    var submitBtn = document.getElementById('submit');
+
+    function val(name) {
+        var el = form.querySelector('[name="' + name + '"]:checked') || form.querySelector('input[type=text][name="' + name + '"]');
+        return el ? el.value.trim() : '';
+    }
+    function goals() {
+        return Array.prototype.map.call(form.querySelectorAll('input[name="goals"]:checked'), function (el) { return el.value; });
+    }
+
+    function showCard(d) {
+        document.getElementById('start').style.display = 'none';
+        document.getElementById('done').style.display = 'block';
+        document.getElementById('hello').textContent = 'გამარჯობა ' + d.name + '!';
+        document.getElementById('cName').textContent = d.name;
+        document.getElementById('cRole').textContent = d.role || 'მონაწილე';
+        document.getElementById('cLevelTxt').textContent = d.level ? d.level + ' / 5' : '—';
+        var bars = document.querySelectorAll('#cBar i');
+        for (var i = 0; i < bars.length; i++) bars[i].className = i < Number(d.level || 0) ? 'on' : '';
+        document.getElementById('cDevice').textContent = d.device || '—';
+        document.getElementById('cGoals').textContent = d.goals.length ? d.goals.join(' · ') : '—';
+        var learn = (d.learn || 'CapCut-ის ახალი ხრიკები').replace(/[.!?…\s]+$/, '');
+        var speech = 'მე ვარ ' + d.name + '.' + (d.role ? ' ვარ ' + d.role + '.' : '') +
+            (d.level ? ' CapCut-ში ჩემი დონეა ' + d.level + ' ხუთიდან.' : '') +
+            ' დღეს მინდა ვისწავლო: ' + learn + '.';
+        document.getElementById('cSpeech').textContent = speech;
+        window.scrollTo(0, 0);
+    }
+
+    form.addEventListener('submit', function (e) {
+        e.preventDefault();
+        errorEl.textContent = '';
+        var d = { name: val('name'), role: val('role'), level: val('level'), device: val('device'), goals: goals(), learn: val('learn') };
+        if (!d.name) { errorEl.textContent = 'სახელი დაწერე — ასე მოგმართავ.'; document.getElementById('name').focus(); return; }
+        if (form.querySelector('[name="_honey"]').value) return;
+        submitBtn.disabled = true;
+        var payload = {
+            _subject: 'CapCut ვორქშოპი — ' + d.name,
+            _template: 'table',
+            'სახელი': d.name,
+            'საქმიანობა': d.role || '—',
+            'CapCut-ის დონე (1–5)': d.level || '—',
+            'სად ამონტაჟებს': d.device || '—',
+            'რა ვიდეოები': d.goals.join(' · ') || '—',
+            'დღეს უნდა ისწავლოს': d.learn || '—'
+        };
+        var shown = false;
+        function finish(ok) {
+            if (shown) return; shown = true;
+            showCard(d);
+            if (!ok) document.getElementById('okText').textContent = 'შენ ვორქშოპზე ხარ! (პასუხი ვერ გაიგზავნა — ბარათი მაინც შენია)';
+        }
+        // Never keep a student waiting: show the card after 4 s even if the network is slow.
+        var timer = setTimeout(function () { finish(true); }, 4000);
+        fetch(ENDPOINT, { method: 'POST', headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' }, body: JSON.stringify(payload) })
+            .then(function (r) { return r.json(); })
+            .then(function (res) { clearTimeout(timer); if (String(res.success) !== 'true') console.warn('FormSubmit:', res.message); finish(true); })
+            .catch(function () { clearTimeout(timer); finish(false); });
+    });
+})();
+</script>
+</body>
+</html>
