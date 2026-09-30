@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="ka">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CapCut ვორქშოპი · SFX პაკი | AD Visual Marketing</title>
+    <meta name="description" content="ანრი დუდუჩავას SFX პაკი და CapCut-ის შპარგალკა.">
+    <meta name="robots" content="noindex">
+    <meta name="theme-color" content="#0B0B0B">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%230B0B0B'/><text x='4' y='24' font-family='Arial Black' font-size='20' fill='%23FF6A00' font-weight='900'>AD</text></svg>">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Noto+Sans+Georgian:wght@400..900&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+        :root {
+            --bg: #0B0B0B; --surface: #161513; --line: rgba(255,255,255,0.10);
+            --text: #F5F2EC; --dim: #A9A39B; --accent: #FF6A00; --ok: #22C55E;
+            --font: 'Noto Sans Georgian', Arial, sans-serif; --display: 'Archivo Black', 'Noto Sans Georgian', Arial, sans-serif;
+        }
+        html { -webkit-text-size-adjust: 100%; }
+        body { font-family: var(--font); background: radial-gradient(circle at 80% -10%, #3A1A05 0%, var(--bg) 55%) fixed; background-color: var(--bg); color: var(--text); min-height: 100vh; line-height: 1.5; }
+        .wrap { max-width: 560px; margin: 0 auto; padding: 20px 16px 48px; }
+        .top { display: flex; align-items: center; justify-content: space-between; margin-bottom: 32px; }
+        .logo { font-family: var(--display); font-size: 22px; letter-spacing: 0.04em; display: flex; align-items: center; gap: 4px; color: var(--text); text-decoration: none; }
+        .logo i { width: 8px; height: 8px; border-radius: 50%; background: var(--accent); display: inline-block; }
+        .tag { font-size: 13px; color: var(--dim); }
+        .eyebrow { font-size: 13px; font-weight: 700; letter-spacing: 0.2em; color: var(--accent); margin-bottom: 12px; }
+        h1 { font-size: 40px; font-weight: 900; line-height: 1.05; letter-spacing: -0.02em; margin-bottom: 20px; }
+        h2 { font-size: 22px; font-weight: 800; line-height: 1.2; }
+        .sfx { display: block; text-decoration: none; background: var(--accent); color: var(--bg); border-radius: 24px; padding: 22px; margin-bottom: 12px; }
+        .sfx .row { display: flex; align-items: center; gap: 16px; }
+        .sfx .t { font-size: 24px; font-weight: 900; line-height: 1.1; }
+        .sfx .s { font-size: 15px; font-weight: 700; color: #3A1A00; margin-top: 4px; }
+        .sfx.pending { background: #2A2825; color: var(--text); pointer-events: none; }
+        .sfx.pending .s { color: var(--dim); }
+        .steps { display: flex; gap: 8px; margin: 0 0 30px; flex-wrap: wrap; }
+        .steps span { font-size: 13px; font-weight: 700; color: var(--dim); border: 1px solid var(--line); border-radius: 999px; padding: 6px 12px; }
+        .card { background: var(--surface); border: 1px solid var(--line); border-radius: 20px; padding: 20px; margin-bottom: 14px; }
+        form { display: flex; flex-direction: column; gap: 18px; }
+        .field { display: flex; flex-direction: column; gap: 10px; }
+        .label { font-size: 16px; font-weight: 700; }
+        .label small { font-weight: 400; color: var(--dim); }
+        input[type=text] { width: 100%; font: inherit; font-size: 17px; color: var(--text); background: #0F0E0D; border: 1px solid var(--line); border-radius: 14px; padding: 14px 16px; outline: none; }
+        input[type=text]::placeholder { color: #6F6A63; }
+        input[type=text]:focus { border-color: var(--accent); }
+        .levels { display: grid; grid-template-columns: repeat(5, 1fr); gap: 8px; }
+        .choice { position: relative; }
+        .choice input { position: absolute; opacity: 0; inset: 0; cursor: pointer; }
+        .choice span { display: flex; align-items: center; justify-content: center; min-height: 54px; border: 1px solid var(--line); border-radius: 14px; background: #0F0E0D; font-family: var(--display); font-size: 20px; user-select: none; transition: all .15s; }
+        .choice input:checked + span { background: var(--accent); border-color: var(--accent); color: var(--bg); }
+        .choice input:focus-visible + span { outline: 2px solid var(--text); outline-offset: 2px; }
+        .scale { display: flex; justify-content: space-between; font-size: 13px; color: var(--dim); margin-top: -2px; }
+        button { font: inherit; font-size: 17px; font-weight: 800; color: var(--bg); background: var(--accent); border: none; border-radius: 16px; padding: 17px 20px; cursor: pointer; }
+        button[disabled] { opacity: .6; }
+        .error { color: #FF8A5C; font-size: 14px; min-height: 1em; }
+        .hp { position: absolute; left: -9999px; width: 1px; height: 1px; opacity: 0; }
+        #thanks { display: none; text-align: center; padding: 10px 0; }
+        #thanks p { color: var(--dim); }
+        #thanks strong { display: block; font-size: 22px; color: var(--text); margin-bottom: 6px; }
+        .section-title { margin: 30px 0 14px; }
+        details { background: var(--surface); border: 1px solid var(--line); border-radius: 20px; margin-bottom: 12px; overflow: hidden; }
+        summary { list-style: none; cursor: pointer; padding: 18px 20px; display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+        summary::-webkit-details-marker { display: none; }
+        summary .n { font-family: var(--display); color: var(--accent); font-size: 18px; margin-right: 10px; }
+        summary .t { font-weight: 800; font-size: 18px; flex: 1; }
+        summary .chev { color: var(--dim); transition: transform .2s; }
+        details[open] summary .chev { transform: rotate(180deg); }
+        .body { padding: 0 20px 18px; }
+        ul.tips { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+        ul.tips li { position: relative; padding-left: 18px; font-size: 15px; }
+        ul.tips li::before { content: ""; position: absolute; left: 0; top: 0.62em; width: 7px; height: 7px; border-radius: 50%; background: var(--accent); }
+        kbd { font-family: var(--display); font-size: 12px; background: #26241F; border: 1px solid #45423C; border-bottom-width: 3px; border-radius: 7px; padding: 3px 7px; white-space: nowrap; }
+        table { width: 100%; border-collapse: collapse; font-size: 14px; }
+        th, td { text-align: left; padding: 10px 6px; border-bottom: 1px solid var(--line); vertical-align: top; }
+        th { color: var(--accent); font-size: 12px; letter-spacing: .08em; font-weight: 800; }
+        td:first-child { font-weight: 700; width: 44%; }
+        .follow { margin-top: 28px; display: flex; gap: 10px; flex-wrap: wrap; }
+        .follow a { flex: 1; min-width: 150px; text-align: center; text-decoration: none; color: var(--text); border: 1px solid var(--line); border-radius: 14px; padding: 14px; font-weight: 700; font-size: 15px; }
+        .follow a.main { background: var(--accent); color: var(--bg); border-color: var(--accent); }
+        .foot { margin-top: 36px; font-size: 12px; color: #6F6A63; text-align: center; }
+    </style>
+</head>
+<body>
+<div class="wrap">
+    <div class="top">
+        <a class="logo" href="https://akheehhe.github.io/ad-visual-marketing/">AD<i></i></a>
+        <span class="tag">CapCut ვორქშოპი</span>
+    </div>
+
+    <p class="eyebrow">ᲑᲝᲜᲣᲡᲘ</p>
+    <h1>მადლობა რომ მოხვედი!</h1>
+
+    <a class="sfx pending" id="sfxBtn" href="#" target="_blank" rel="noopener">
+        <div class="row">
+            <svg width="44" height="44" viewBox="0 0 48 48" fill="none" aria-hidden="true"><path d="M24 8 V30 M15 21 L24 30 L33 21" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><path d="M8 28 V38 H40 V28" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <div><p class="t">ჩემი SFX პაკი</p><p class="s" id="sfxSub">ლინკი მალე დაემატება</p></div>
+        </div>
+    </a>
+    <div class="steps"><span>1 ჩამოტვირთე</span><span>2 CapCut → Import</span><span>3 გადაათრიე თაიმლაინზე</span></div>
+
+    <div class="card">
+        <form id="form" novalidate>
+            <input class="hp" type="text" name="_honey" tabindex="-1" autocomplete="off" aria-hidden="true">
+            <div class="field" role="radiogroup" aria-label="შეფასება">
+                <span class="label">როგორ შეაფასებ ვორქშოპს?</span>
+                <div class="levels">
+                    <label class="choice"><input type="radio" name="rating" value="1"><span>1</span></label>
+                    <label class="choice"><input type="radio" name="rating" value="2"><span>2</span></label>
+                    <label class="choice"><input type="radio" name="rating" value="3"><span>3</span></label>
+                    <label class="choice"><input type="radio" name="rating" value="4"><span>4</span></label>
+                    <label class="choice"><input type="radio" name="rating" value="5"><span>5</span></label>
+                </div>
+                <div class="scale"><span>სუსტი</span><span>საუკეთესო</span></div>
+            </div>
+            <label class="field">
+                <span class="label">რას გამოიყენებ ხვალვე?</span>
+                <input type="text" name="useful" maxlength="140" placeholder="მაგ. სუბტიტრები · SFX · Adjustment layer">
+            </label>
+            <label class="field">
+                <span class="label">რა იყო გაუგებარი?</span>
+                <input type="text" name="unclear" maxlength="160" placeholder="გულწრფელად — ეს ყველაზე მეტად მეხმარება">
+            </label>
+            <label class="field">
+                <span class="label">სახელი <small>(სურვილისამებრ)</small></span>
+                <input type="text" name="name" maxlength="40" autocomplete="given-name">
+            </label>
+            <p class="error" id="error" role="alert"></p>
+            <button type="submit" id="submit">გაგზავნა →</button>
+        </form>
+        <div id="thanks" aria-live="polite"><strong>მადლობა!</strong><p id="thanksText">შენი აზრი მივიღე — შემდეგი ვორქშოპი უკეთესი იქნება.</p></div>
+    </div>
+
+    <h2 class="section-title">შპარგალკა</h2>
+
+    <details open>
+        <summary><span class="n">01</span><span class="t">მონტაჟი</span><span class="chev">▾</span></summary>
+        <div class="body">
+            <table>
+                <tr><th>მოქმედება</th><th>ღილაკი</th></tr>
+                <tr><td>გაჭრა</td><td><kbd>Ctrl / Cmd</kbd> + <kbd>B</kbd></td></tr>
+                <tr><td>წაშლა მარცხნივ / მარჯვნივ</td><td><kbd>Q</kbd> / <kbd>W</kbd></td></tr>
+                <tr><td>Undo</td><td><kbd>Ctrl / Cmd</kbd> + <kbd>Z</kbd></td></tr>
+                <tr><td>Redo</td><td><kbd>Ctrl / Cmd</kbd> + <kbd>Shift</kbd> + <kbd>Z</kbd></td></tr>
+                <tr><td>Play / Pause</td><td><kbd>Space</kbd></td></tr>
+                <tr><td>კადრ-კადრ</td><td><kbd>←</kbd> <kbd>→</kbd></td></tr>
+                <tr><td>მარკერი</td><td><kbd>M</kbd></td></tr>
+            </table>
+            <ul class="tips" style="margin-top:14px">
+                <li>სიჩუმე და პაუზები — ჭრა</li>
+                <li>მთავარ სიტყვაზე — zoom · Scale-ზე ორი keyframe</li>
+            </ul>
+        </div>
+    </details>
+
+    <details>
+        <summary><span class="n">02</span><span class="t">ტექსტი · სტიკერები · ხმა</span><span class="chev">▾</span></summary>
+        <div class="body">
+            <ul class="tips">
+                <li>სუბტიტრები ხელით: Text → Add text · 2–4 სიტყვა</li>
+                <li>ქართული შრიფტი — თორემ ოთხკუთხედები</li>
+                <li>ტექსტი ცენტრში — ქვედა ზოლი და მარჯვენა კიდე ინტერფეისს უკავია</li>
+                <li>სტიკერები: მედია პანელი → Stickers</li>
+                <li>SFX: Audio → Sound effects · შენი ფაილები Import-ით</li>
+                <li>Beats: მონიშნე მუსიკა → Beats → Auto generate</li>
+                <li>ლაპარაკისას მუსიკა დაბლა · Fade in / out</li>
+                <li>CapCut-ის მუსიკა ბრენდისთვის მხოლოდ TikTok-ზე · Instagram და YouTube — საკუთარი ლიცენზია</li>
+            </ul>
+        </div>
+    </details>
+
+    <details>
+        <summary><span class="n">03</span><span class="t">ფერი და ხარისხი</span><span class="chev">▾</span></summary>
+        <div class="body">
+            <ul class="tips">
+                <li>ჯერ კორექცია — მერე სტილი</li>
+                <li>Exposure → Contrast → Temperature</li>
+                <li>კანის ტონი — HSL ფორთოხლისფერი</li>
+                <li>LUT: Adjustment → LUT → Import</li>
+                <li>Adjustment layer — ერთი ფენა ყველა კლიპზე</li>
+                <li>ხმა: Enhance voice · Reduce noise</li>
+                <li>ნათურების შუქზე — 50 fps</li>
+            </ul>
+        </div>
+    </details>
+
+    <details>
+        <summary><span class="n">04</span><span class="t">ექსპორტი</span><span class="chev">▾</span></summary>
+        <div class="body">
+            <table>
+                <tr><th>პლატფორმა</th><th>კადრი</th><th>ზომა</th></tr>
+                <tr><td>Reels · TikTok · Shorts</td><td>9:16</td><td>1080 × 1920</td></tr>
+                <tr><td>YouTube</td><td>16:9</td><td>1920 × 1080</td></tr>
+            </table>
+            <ul class="tips" style="margin-top:14px">
+                <li>1080p · fps როგორც გადაიღე · Recommended · H.264 · MP4</li>
+                <li>Pro ელემენტი ექსპორტს ბლოკავს</li>
+                <li>ტელეფონზე: Settings → Add default ending — გამორთე</li>
+                <li>Instagram: Profile → Menu → Media quality → Upload at highest quality</li>
+            </ul>
+        </div>
+    </details>
+
+    <div class="follow">
+        <a class="main" href="https://www.instagram.com/ad.visualmarketing/" target="_blank" rel="noopener">Instagram · @ad.visualmarketing</a>
+        <a href="https://www.tiktok.com/@a.duduchava" target="_blank" rel="noopener">TikTok</a>
+        <a href="https://akheehhe.github.io/ad-visual-marketing/" target="_blank" rel="noopener">პორტფოლიო</a>
+    </div>
+
+    <p class="foot">© AD Visual Marketing · ანრი დუდუჩავა</p>
+</div>
+
+<script>
+(function () {
+    // SFX pack download link (Google Drive folder or similar). Empty = button shows "coming soon".
+    var SFX_URL = '';
+    var btn = document.getElementById('sfxBtn');
+    if (SFX_URL) {
+        btn.href = SFX_URL;
+        btn.classList.remove('pending');
+        document.getElementById('sfxSub').textContent = 'უფასოდ · ჩამოტვირთე';
+    }
+
+    // Feedback is emailed to Anri through FormSubmit (same service as the portfolio contact form).
+    var ENDPOINT = 'https://formsubmit.co/ajax/anriduduchaga@gmail.com';
+    var form = document.getElementById('form');
+    var errorEl = document.getElementById('error');
+    var submitBtn = document.getElementById('submit');
+
+    function field(name) {
+        var el = form.querySelector('[name="' + name + '"]:checked') || form.querySelector('input[type=text][name="' + name + '"]');
+        return el ? el.value.trim() : '';
+    }
+
+    function done(ok) {
+        form.style.display = 'none';
+        document.getElementById('thanks').style.display = 'block';
+        if (!ok) document.getElementById('thanksText').textContent = 'ინტერნეტის პრობლემა — პასუხი ვერ გაიგზავნა. სცადე მოგვიანებით ან მომწერე Instagram-ზე.';
+    }
+
+    form.addEventListener('submit', function (e) {
+        e.preventDefault();
+        errorEl.textContent = '';
+        var rating = field('rating');
+        if (!rating) { errorEl.textContent = 'აირჩიე შეფასება 1-დან 5-მდე.'; return; }
+        if (form.querySelector('[name="_honey"]').value) return;
+        submitBtn.disabled = true;
+        var payload = {
+            _subject: 'CapCut ვორქშოპი — უკუკავშირი ' + rating + '/5',
+            _template: 'table',
+            'შეფასება (1–5)': rating,
+            'რას გამოიყენებს': field('useful') || '—',
+            'რა იყო გაუგებარი': field('unclear') || '—',
+            'სახელი': field('name') || '—'
+        };
+        fetch(ENDPOINT, { method: 'POST', headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' }, body: JSON.stringify(payload) })
+            .then(function (r) { return r.json(); })
+            .then(function (res) { if (String(res.success) !== 'true') console.warn('FormSubmit:', res.message); done(true); })
+            .catch(function () { done(false); });
+    });
+})();
+</script>
+</body>
+</html>
