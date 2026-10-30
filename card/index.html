@@ -3,12 +3,12 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Aleksandre Duduchava · Marketer, Video Editor, Entrepreneur</title>
-<meta name="description" content="Marketer, video editor and entrepreneur. Portfolio, Instagram and LinkedIn.">
+<title>Aleksandre Duduchava · Social media marketer · Entrepreneur</title>
+<meta name="description" content="Social media marketer and entrepreneur. Save my contact, call me, or see my portfolio, Instagram and LinkedIn.">
 <meta name="theme-color" content="#0b0b0b">
 <meta property="og:type" content="profile">
 <meta property="og:title" content="Aleksandre Duduchava · AD Visual Marketing">
-<meta property="og:description" content="Marketer, video editor and entrepreneur.">
+<meta property="og:description" content="Social media marketer and entrepreneur.">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230b0b0b'/%3E%3Ctext x='16' y='22' font-family='Arial Black,Arial,sans-serif' font-weight='900' font-size='14' text-anchor='middle' fill='%23ff6a00'%3EAD%3C/text%3E%3C/svg%3E">
 <link rel="preload" href="fonts/archivo-black-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
 <style>
@@ -119,22 +119,19 @@ a {
   margin-top: 52px;
 }
 
-.mono {
-  display: grid;
-  place-items: center;
+.avatar {
+  display: block;
   width: 112px;
   height: 112px;
   border: 2px solid var(--accent);
   border-radius: 50%;
   background: var(--surface);
-  color: var(--accent);
-  font: 400 36px/1 var(--display);
-  letter-spacing: 0.02em;
+  object-fit: cover;
 }
 
 .name {
   margin-top: 22px;
-  font: 400 40px/1.02 var(--display);
+  font: 400 clamp(32px, 11vw, 40px)/1.02 var(--display);
   letter-spacing: -0.01em;
   text-transform: uppercase;
   text-wrap: balance;
@@ -156,12 +153,6 @@ a {
   color: var(--accent);
   font: 600 13px/1 var(--font);
   letter-spacing: 0.02em;
-}
-
-.lede {
-  margin-top: 18px;
-  color: var(--dim);
-  font-size: 15px;
 }
 
 .links {
@@ -194,6 +185,13 @@ a {
   font-size: 18px;
 }
 
+.btn .detail {
+  color: var(--dim);
+  font-weight: 600;
+  font-size: 15px;
+  letter-spacing: 0.01em;
+}
+
 .foot {
   display: flex;
   justify-content: space-between;
@@ -216,18 +214,19 @@ a {
   <header class="brand"><span class="dot" aria-hidden="true"></span>AD Visual Marketing</header>
 
   <section class="hero" aria-labelledby="name">
-    <div class="mono" aria-hidden="true">AD</div>
+    <img class="avatar" src="photo.jpg" width="112" height="112" alt="Aleksandre Duduchava">
     <h1 class="name" id="name">Aleksandre Duduchava</h1>
     <ul class="roles" aria-label="Roles">
-      <li><span>Marketer</span></li>
-      <li><span>Video editor</span></li>
+      <li><span>Social media marketer</span></li>
       <li><span>Entrepreneur</span></li>
+      <li><span>Video editor</span></li>
     </ul>
-    <p class="lede">Visual marketing · Short-form video · CapCut workshops</p>
   </section>
 
-  <nav class="links" aria-label="Links">
-    <a class="btn primary" href="https://akheehhe.github.io/ad-visual-marketing/">View portfolio <span class="arrow" aria-hidden="true">→</span></a>
+  <nav class="links" aria-label="Contact and links">
+    <a class="btn primary" href="aleksandre-duduchava.vcf">Save contact <span class="arrow" aria-hidden="true">↓</span></a>
+    <a class="btn" href="tel:+995592105419">Call <span class="detail">+995 592 105 419</span></a>
+    <a class="btn" href="https://akheehhe.github.io/ad-visual-marketing/">View portfolio <span class="arrow" aria-hidden="true">→</span></a>
     <a class="btn" href="https://www.instagram.com/ad.visualmarketing/" target="_blank" rel="noopener">Instagram <span class="arrow" aria-hidden="true">→</span></a>
     <a class="btn" href="https://www.linkedin.com/in/aleksandre-duduchava-865351320" target="_blank" rel="noopener">LinkedIn <span class="arrow" aria-hidden="true">→</span></a>
   </nav>
